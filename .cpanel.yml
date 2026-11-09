@@ -1,0 +1,6 @@
+---
+deployment:
+  tasks:
+    - export DEPLOYPATH=/home/fttbxmac/3mattrik.com
+    - /bin/mkdir -p $DEPLOYPATH
+    - /bin/rsync -a --exclude='.git' --exclude='.github' --exclude='.env' --exclude='database/database.sqlite' --exclude='public/uploads' ./ $DEPLOYPATH/
